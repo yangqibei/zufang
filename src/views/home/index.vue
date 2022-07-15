@@ -5,7 +5,7 @@
       <van-search label="地址" placeholder="请输入小区或地址">
         <template #label>
           <span @click="$router.push('/citys')"
-            >{{$store.state.city }}
+            >{{ $store.state.city.label }}
             <i class="toutiao toutiao-gengduo"></i>
           </span>
           <em>|</em>

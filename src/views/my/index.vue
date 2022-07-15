@@ -83,7 +83,13 @@ export default {
     async logout () {
       try {
         await this.$dialog.confirm({ message: '是否确认退出', title: '提示' })
-        this.$store.commit('setUser', {})
+          .then(() => {
+            this.$store.commit('setToken', '')
+            this.$toast.success('成功退出')
+          })
+          .catch(() => {
+            this.$toast.fail('取消退出')
+          })
       } catch (error) {
         console.log(error)
       }
@@ -91,7 +97,7 @@ export default {
     async getUser () {
       try {
         const res = await getUser()
-        // console.log(res)
+        console.log(res)
         this.userInfo = res.data.body
       } catch (error) {
         console.log(error)

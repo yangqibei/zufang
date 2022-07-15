@@ -79,7 +79,8 @@
     <van-popup v-model="roomType1" position="bottom">
       <van-picker
         show-toolbar
-        :columns="puthomeinfo.roomType.map((item) => item.label)"
+        value-key="label"
+        :columns="puthomeinfo.roomType"
         @confirm="onConfirm"
         @cancel="onCancel"
       />
@@ -88,7 +89,8 @@
     <van-popup v-model="floor1" position="bottom">
       <van-picker
         show-toolbar
-        :columns="puthomeinfo.floor.map((item) => item.label)"
+        value-key="label"
+        :columns="puthomeinfo.floor"
         @confirm="onConfirm1"
         @cancel="onCancel1"
       />
@@ -97,7 +99,8 @@
     <van-popup v-model="oriented1" position="bottom">
       <van-picker
         show-toolbar
-        :columns="puthomeinfo.oriented.map((item) => item.label)"
+        value-key="label"
+        :columns="puthomeinfo.oriented"
         @confirm="onConfirm2"
         @cancel="onCancel2"
       />

@@ -24,6 +24,7 @@
           v-for="(item1, index1) in obj"
           :key="index1"
           :title="item1.label"
+          @click="fn"
         />
       </div>
     </van-index-bar>
@@ -97,11 +98,15 @@ export default {
       }
     },
     chose (item) {
+      console.log(item)
       this.homes = []
       this.citypoint(item.value)
       this.currencity = item.label
       this.$router.push({ path: '/home' })
-      this.$store.commit('setCity', item.label)
+      this.$store.commit('setCity', item)
+    },
+    fn () {
+      this.$toast.fail('暂无数据')
     }
   },
   computed: {},

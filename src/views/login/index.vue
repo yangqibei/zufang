@@ -62,13 +62,12 @@ export default {
       try {
         const res = await Login(value)
         console.log(res)
-        this.$store.commit('setToken', res.data.body)
+        this.$store.commit('setToken', res.data.body.token)
       } catch (error) {
         console.log(error)
         this.$toast.fail('登录失败')
       }
       if (this.$store.state.user && this.$store.state.user.token) {
-        console.log(123321)
         this.$toast.success('登录成功')
         setTimeout(async () => {
           try {

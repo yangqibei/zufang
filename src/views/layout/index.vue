@@ -57,9 +57,11 @@ export default {
 }
 .van-tabbar {
   position: fixed;
+  height: 100px;
+  bottom: 0;
 }
 
-.main {
-  height: 1500px;
+/deep/.main {
+  height: 100vh;
 }
 </style>

@@ -8,15 +8,22 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
-    token: {},
-    city: '',
+    user: {
+      token: ''
+    },
+    city: {
+      label: '北京',
+      pinyin: 'beijing',
+      short: 'bj',
+      value: 'AREA|88cff55c-aaa4-e2e0'
+    },
     homeCode: ''
   },
   getters: {
   },
   mutations: {
     setToken (state, payload) {
-      state.token = payload
+      state.user.token = payload
     },
     setCity (state, payload) {
       state.city = payload
